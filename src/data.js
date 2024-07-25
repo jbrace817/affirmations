@@ -1576,3 +1576,5 @@ const affirmations = [
   },
   { id: 428, affirmation: 'I am surrounded by love and light.', read: false },
 ];
+
+export default affirmations;

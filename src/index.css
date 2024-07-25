@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 :root {
   --swiper-navigation-color: #dddddd;
 }
@@ -13,9 +14,10 @@ body {
 
 body {
   background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
+  font-family: 'Varela', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #1b1b1b;
   margin: 0;
   padding: 0;
 }
@@ -58,5 +60,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff6b;
+  background: #ffffff83;
+  padding: 2rem;
+  border-radius: 40px;
 }

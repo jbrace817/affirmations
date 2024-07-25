@@ -14,6 +14,8 @@ import { Navigation } from 'swiper/modules';
 //Import Bootstrap styles
 import 'bootstrap/dist/css/bootstrap.css';
 
+import affirmations from './data';
+
 export default function App() {
   return (
     <div className="container">
@@ -22,40 +24,29 @@ export default function App() {
         navigation={true}
         modules={[Navigation]}
         className="mySwiper"
+        initialSlide={1}
       >
-        <SwiperSlide>
-          <span className="center">Slide 1</span>
-          <img
-            src="https://picsum.photos/seed/slide1/1920/1080"
-            alt="Slide 1"
-            className="img-fluid"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <span className="center">Slide 2</span>
-          <img
-            src="https://picsum.photos/seed/slide2/1920/1080"
-            alt="Slide 2"
-            className="img-fluid"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <span className="center">Slide 3</span>
-          <img
-            src="https://picsum.photos/seed/slide3/1920/1080"
-            alt="Slide 3"
-            className="img-fluid"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <span className="center">Slide 4</span>
-          <img
-            src="https://picsum.photos/seed/slide4/1920/1080"
-            alt="Slide 4"
-            className="img-fluid"
-          />
-        </SwiperSlide>
+        {affirmations.map((affirmation) => (
+          <SwiperSlide key={affirmation.id}>
+            <Affirmation affirmation={affirmation} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
+  );
+}
+
+function Affirmation({ affirmation }) {
+  return (
+    <>
+      <span className="center display-4 fw-normal fst-italic text-muted">
+        {affirmation.affirmation}
+      </span>
+      <img
+        src={`https://picsum.photos/seed/slide${affirmation.id}/1920/1080`}
+        alt={`Slide ${affirmation.id}`}
+        className="img-fluid"
+      />
+    </>
   );
 }
