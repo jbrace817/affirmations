@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,35 +18,54 @@ import 'bootstrap/dist/css/bootstrap.css';
 import affirmations from './data';
 
 export default function App() {
-  // const today = new Date('7/25/2024').toLocaleDateString();
-  if (!localStorage.getItem('date')) {
-    localStorage.setItem('date', new Date().toLocaleDateString());
-    localStorage.setItem('slide', 0);
-  } else if (localStorage.getItem('date') !== new Date().toLocaleDateString()) {
-    localStorage.setItem('date', new Date().toLocaleDateString());
-    const savedSlide = localStorage.getItem('slide');
-    localStorage.setItem('slide', Number(savedSlide) + 1);
-    if (Number(localStorage.getItem('slide')) === affirmations.length) {
-      localStorage.setItem('slide', 0);
-    }
-  }
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const swiperRef = useRef(null);
 
+  const toSlide = (num) => {
+    setCurrentSlide(num);
+    console.log('go to slide', num);
+    swiperRef.current?.swiper.slideTo(num);
+  };
+
+  const handleFocus = (e) => {
+    e.target.select();
+  };
+
+  console.log(currentSlide);
   return (
-    <div className="container">
-      <Swiper
-        rewind={true}
-        navigation={true}
-        modules={[Navigation, Autoplay]}
-        className="mySwiper"
-        initialSlide={Number(localStorage.getItem('slide'))}
-        autoplay={{ delay: 5000 }}
-      >
-        {affirmations.map((affirmation) => (
-          <SwiperSlide key={affirmation.id}>
-            <Affirmation affirmation={affirmation} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="main">
+      <div className="slide">
+        <div className="container">
+          <Swiper
+            ref={swiperRef}
+            rewind={true}
+            navigation={true}
+            modules={[Navigation, Autoplay]}
+            // initialSlide={Number(localStorage.getItem('slide'))}
+            autoplay={{ delay: 5000 }}
+            onSlideChange={(swiperCore) => {
+              const { activeIndex } = swiperCore;
+              setCurrentSlide(activeIndex);
+            }}
+            onSwiper={(swiper) => swiper.slideTo(currentSlide, 500)}
+          >
+            {affirmations.map((affirmation) => (
+              <SwiperSlide key={affirmation.id}>
+                <Affirmation affirmation={affirmation} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <input
+          value={currentSlide < 9 ? currentSlide + 1 : currentSlide + 1}
+          onChange={(e) => toSlide(Number(e.target.value - 1))}
+          type="number"
+          max={affirmations.length}
+          min={1}
+          onFocus={handleFocus}
+        />
+        <p>of {affirmations.length}</p>
+      </div>
     </div>
   );
 }
