@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+//Import useState hook from React
+import React, { useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -6,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+//Import Styles
 import './index.css';
 
 // Import required modules
@@ -14,40 +16,58 @@ import { Navigation, Autoplay } from 'swiper/modules';
 //Import Bootstrap styles
 import 'bootstrap/dist/css/bootstrap.css';
 
+//Import Bootstrap Form
+import Form from 'react-bootstrap/Form';
+
 //Import Data
 import affirmations from './data';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const swiperRef = useRef(null);
+  const [swiperRef, setSwiperRef] = useState(null);
+  const [autoplay, setAutoplay] = useState(true);
 
+  console.log(autoplay);
   const toSlide = (num) => {
     setCurrentSlide(num);
     console.log('go to slide', num);
-    swiperRef.current?.swiper.slideTo(num);
+    swiperRef.slideTo(num);
   };
 
   const handleFocus = (e) => {
     e.target.select();
   };
 
-  console.log(currentSlide);
+  const handleAutoPlay = () => {
+    setAutoplay((play) => !play);
+    autoplay ? swiperRef.autoplay.stop() : swiperRef.autoplay.start();
+  };
+
   return (
     <div className="main">
       <div className="slide">
+        <div className="container">
+          <Form.Check
+            type="switch"
+            defaultChecked={autoplay}
+            onClick={handleAutoPlay}
+            className="autoplay"
+            label="Autoplay"
+            reverse
+          />
+        </div>
         <div className="container">
           <Swiper
             ref={swiperRef}
             rewind={true}
             navigation={true}
             modules={[Navigation, Autoplay]}
-            // initialSlide={Number(localStorage.getItem('slide'))}
             autoplay={{ delay: 5000 }}
             onSlideChange={(swiperCore) => {
               const { activeIndex } = swiperCore;
               setCurrentSlide(activeIndex);
             }}
-            onSwiper={(swiper) => swiper.slideTo(currentSlide, 500)}
+            onSwiper={setSwiperRef}
           >
             {affirmations.map((affirmation) => (
               <SwiperSlide key={affirmation.id}>
@@ -56,15 +76,17 @@ export default function App() {
             ))}
           </Swiper>
         </div>
-        <input
-          value={currentSlide < 9 ? currentSlide + 1 : currentSlide + 1}
-          onChange={(e) => toSlide(Number(e.target.value - 1))}
-          type="number"
-          max={affirmations.length}
-          min={1}
-          onFocus={handleFocus}
-        />
-        <p>of {affirmations.length}</p>
+        <div className="indicator">
+          <input
+            value={currentSlide + 1}
+            onChange={(e) => toSlide(Number(e.target.value - 1))}
+            type="number"
+            max={affirmations.length}
+            min={0}
+            onFocus={handleFocus}
+          />
+          <span>of {affirmations.length}</span>
+        </div>
       </div>
     </div>
   );
