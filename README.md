@@ -32,7 +32,7 @@
     A carousel of "I am" affirmations using Swiper.js
     <br />
     <br />
-    <a href="https://github.com/jbrace817/affirmations">View Demo</a>
+    <a href="https://jbrace817.github.io/affirmations/">View Demo</a>
     ·
     <a href="https://github.com/jbrace817/affirmations/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
