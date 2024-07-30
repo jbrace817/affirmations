@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/affirmations/static/css/main.acd33f8a.css",
+    "main.js": "/affirmations/static/js/main.f9c197c7.js",
+    "index.html": "/affirmations/index.html",
+    "main.acd33f8a.css.map": "/affirmations/static/css/main.acd33f8a.css.map",
+    "main.f9c197c7.js.map": "/affirmations/static/js/main.f9c197c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acd33f8a.css",
+    "static/js/main.f9c197c7.js"
+  ]
+}
