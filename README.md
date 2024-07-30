@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/jbrace817/affirmations">
     <img src="./public/favicon.ico" alt="Meditating icon" width="80" height="80">
   </a>
 
@@ -32,11 +32,11 @@
     A carousel of "I am" affirmations using Swiper.js
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/jbrace817/affirmations">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/jbrace817/affirmations/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/jbrace817/affirmations/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -47,7 +47,7 @@
 <!-- [![Product Name Screen Shot][product-screenshot]]() -->
 <img src="./src/Images/AppScreenshot.png" alt="App screenshot" style="display: block; margin: 40px auto"/>
 
-Part of my morning routine is to listen to or read some "I am affirmations" to help get my mind right. At times, I found myself looking for some affirmations online and the articles or sites I visited would just list them off. I thought a carousel of affirmations with some peaceful images would be a good project to build with React to reinforce what I am learning about state and form controelled elements. The images I used are from https://picsum.photos.
+Part of my morning routine is to listen to or read some "I am" affirmations to help get my mind right. At times, I found myself looking for affirmations online, but the articles or sites I visited would just list them off. I thought a carousel of affirmations with some peaceful images would be a good project to build with React to reinforce what I am learning about state and controlled form elements. The images I used are from https://picsum.photos.
 
 ### Built With
 
@@ -60,21 +60,21 @@ Part of my morning routine is to listen to or read some "I am affirmations" to h
 
 James Brace -> [jamesfbrace](www.linkedin.com/in/jamesfbrace)
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/jbrace817/affirmations](https://github.com/jbrace817/affirmations)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[contributors-url]: https://github.com/jbrace817/affirmations/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
+[forks-url]: https://github.com/jbrace817/affirmations/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
+[stars-url]: https://github.com/jbrace817/affirmations/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
+[issues-url]: https://github.com/jbrace817/affirmations/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[license-url]: https://github.com/jbrace817/affirmations/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jamesfbrace
 [product-screenshot]: ./src/Images/AppScreenshot.png
